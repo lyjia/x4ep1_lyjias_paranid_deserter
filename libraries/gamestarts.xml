@@ -1,6 +1,6 @@
 <diff>
 	<add sel="/gamestarts">
-		<gamestart id="x4ep1_gamestart_lyjias_paranid_deserter" name="The Paranid Deserter" description="Following a successful bombing run in Holy Vision, you and your crew have deserted your squad and fled through a jumpgate to Faulty Logic. Although it seems that you weren't followed, you are bruised and deeply lost in Xenon space -- your shields are busted your navigation data is corrupted, and you're nearly out of ammo. Worse: back home you're a traitor, a deserter, a thief, and a coward. Now every Paranid is out for your head. You command a fully-crewed ship with advanced blueprints and technology. Can you make it to safe haven? Can you find a new home?" image="gamestart_1" intro="gamestart5">
+		<gamestart id="x4ep1_gamestart_lyjias_paranid_deserter" name="The Paranid Deserter" description="Following a successful bombing run in Holy Vision, you've deserted your squad and fled through a jumpgate to Faulty Logic. Although you've shaken most of your pursuers, you are bruised and deeply lost in Xenon space: your shields are busted, your navmap is corrupted, you're nearly out of ammo, and a search crew is hot on your tail. Worse: back home you're a traitor, a deserter, a thief, and a coward. The entire Paranid race is now out for your head! Luckily, your trusty Nemesis Vanguard is still in one piece, and it's loaded with stolen blueprints and Paranid tech. A worthy haul... but only if you get somewhere safe, fast." image="gamestart_1" intro="gamestart5">
       	
       	<info>
           <item name="{1021,8}" value="Hadkepthozvat the Traitor" /> <!-- Name -->
@@ -9,17 +9,17 @@
           <item name="{1021,3}" value="20 cr" /> <!-- Cash -->
           <item name="{1021,4}" value="All research completed (except final teleportation). {1001,1132} unlocked. All general, Paranid station modules, and Paranid shields/turrets/missiles unlocked. Player ship starts with most software including {20108,4021}." /> <!-- Equipment -->
           <item name="{1001,2690}" value="Lyjia" /> <!-- Author -->
-          <item name="{1001,2655}" value="0.1" /> <!-- Version -->
-          <item name="{1001,2691}" value="19 Jan 2019" /> <!-- Date -->
+          <item name="{1001,2655}" value="0.2" /> <!-- Version -->
+          <item name="{1001,2691}" value="13 Jan 2019" /> <!-- Date -->
           <item name="Relations" value="Paranid: Enemies. Holy Order: Enemies. Alliance: Enemies. Friends: None."/>
           <item name="{1021,9950}" value="Howdy!" /> <!-- Notes -->
       	</info>
 	    
-	    <location galaxy="xu_ep2_universe_macro" zone="zone001_cluster_25_sector002_macro">
+	    <location galaxy="xu_ep2_universe_macro" zone="zone001_cluster_26_sector002_macro">
 		    <!-- old <position x="-24299.879" y="-249.256" z="-13310.063"/>
 	      	<rotation yaw="-61.50683" pitch="14.70719" roll="43.06808"/> -->
-	      	<position x="13465.525" y="-1501.484" z="-11617.59"/>
-			<rotation yaw="-23.57782" pitch="-2.93695" roll="0.000897155"/>
+			<position x="-10418.942" y="-2647.87" z="-4668.568"/>
+			<rotation yaw="45.98628" pitch="-6.29821"/>
 	    </location>
 		
 		<player macro="character_player_tutorial_macro" money="20" name="Hadkepthozvat the Traitor">
