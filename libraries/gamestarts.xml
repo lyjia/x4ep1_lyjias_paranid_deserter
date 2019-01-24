@@ -1,28 +1,32 @@
 <diff>
 	<add sel="/gamestarts">
-		<gamestart id="x4ep1_gamestart_lyjias_paranid_deserter" name="The Paranid Deserter" description="Following a successful bombing run in Holy Vision, you've deserted your squad and fled through a jumpgate to Faulty Logic. Although you've shaken most of your pursuers, you are bruised and deeply lost in Xenon space: your shields are busted, your navmap is corrupted, you're nearly out of ammo, and a search crew is hot on your tail. Worse: back home you're a traitor, a deserter, a thief, and a coward. The entire Paranid race is now out for your head! Luckily, your trusty Nemesis Vanguard is still in one piece, and it's loaded with stolen blueprints and Paranid tech. A worthy haul... but only if you get somewhere safe, fast." image="gamestart_1" intro="gamestart5">
-      	
-      	<info>
-          <item name="{1021,8}" value="Hadkepthozvat the Traitor" /> <!-- Name -->
-          <item name="{1021,1}" value="{20004,250021}" /> <!-- Location -->
-          <item name="{1021,2}" value="{20101,30301} {20111,1101}" /> <!-- Starting Ship -->
-          <item name="{1021,3}" value="20 cr" /> <!-- Cash -->
-          <item name="{1021,4}" value="All research completed (except final teleportation). {1001,1132} unlocked. All general, Paranid station modules, and Paranid shields/turrets/missiles unlocked. Player ship starts with most software including {20108,4021}." /> <!-- Equipment -->
-          <item name="{1001,2690}" value="Lyjia" /> <!-- Author -->
-          <item name="{1001,2655}" value="0.2" /> <!-- Version -->
-          <item name="{1001,2691}" value="13 Jan 2019" /> <!-- Date -->
-          <item name="Relations" value="Paranid: Enemies. Holy Order: Enemies. Alliance: Enemies. Friends: None."/>
-          <item name="{1021,9950}" value="Howdy!" /> <!-- Notes -->
-      	</info>
-	    
-	    <location galaxy="xu_ep2_universe_macro" zone="zone001_cluster_26_sector002_macro">
-		    <!-- old <position x="-24299.879" y="-249.256" z="-13310.063"/>
-	      	<rotation yaw="-61.50683" pitch="14.70719" roll="43.06808"/> -->
-			<position x="-10418.942" y="-2647.87" z="-4668.568"/>
-			<rotation yaw="45.98628" pitch="-6.29821"/>
-	    </location>
-		
-		<player macro="character_player_tutorial_macro" money="20" name="Hadkepthozvat the Traitor">
+		<gamestart description="Following a successful bombing run in Holy Vision, you've deserted your squad and fled through a jumpgate to Faulty Logic. Although you've shaken most of your pursuers, you are bruised and deeply lost in Xenon space: your shields are busted, your navmap is corrupted, you're nearly out of ammo, and a search crew is hot on your tail. Worse: back home you're a traitor, a deserter, a thief, and a coward. The entire Paranid race is now out for your head! Luckily, your trusty Nemesis Vanguard is still in one piece, and it's loaded with stolen blueprints and Paranid tech. A worthy haul... but only if you get somewhere safe, fast." id="x4ep1_gamestart_lyjias_paranid_deserter" image="gamestart_3" intro="gamestart5" name="The Paranid Deserter">
+			<info>
+				<item name="{1021,8}" value="Hadkepthozvat the Traitor"/>
+				<!-- Name -->
+				<item name="{1021,1}" value="{20004,250021}"/>
+				<!-- Location -->
+				<item name="{1021,2}" value="{20101,30301} {20111,1101}"/>
+				<!-- Starting Ship -->
+				<item name="{1021,3}" value="20 cr"/>
+				<!-- Cash -->
+				<item name="{1021,4}" value="All research completed (except final teleportation). {1001,1132} unlocked. All general, Paranid station modules, and Paranid shields/turrets/missiles unlocked. Player ship starts with most software including {20108,4021}."/>
+				<!-- Equipment -->
+				<item name="{1001,2690}" value="Lyjia"/>
+				<!-- Author -->
+				<item name="{1001,2655}" value="0.3"/>
+				<!-- Version -->
+				<item name="{1001,2691}" value="20 Jan 2019"/>
+				<!-- Date -->
+				<item name="Relations" value="Paranid: Enemies. Holy Order: Enemies. Alliance: Enemies. Friends: None."/>
+				<item name="{1021,9950}" value="Howdy!"/>
+				<!-- Notes -->
+			</info>
+			<location galaxy="xu_ep2_universe_macro" zone="zone001_cluster_26_sector002_macro">
+				<position x="-10418.942" y="-2647.87" z="-4668.568"/>
+				<rotation pitch="-6.29821" yaw="45.98628"/>
+			</location>
+			<player macro="character_player_tutorial_macro" money="20" name="Hadkepthozvat the Traitor">
 				<ship macro="ship_par_m_corvette_01_a_macro">
 					<loadout>
 						<macros>
@@ -32,11 +36,10 @@
 							<weapon macro="weapon_gen_m_dumbfire_01_mk2_macro" path="../con_primaryweapon_03"/>
 							<weapon macro="weapon_gen_m_dumbfire_01_mk2_macro" path="../con_primaryweapon_02"/>
 							<weapon macro="weapon_gen_m_dumbfire_01_mk2_macro" path="../con_primaryweapon_01"/>
-							<!-- <shield macro="shield_par_m_standard_01_mk2_macro" path="../con_shield_front_r"/>
-							<shield macro="shield_par_m_standard_01_mk2_macro" path="../con_shield_front_l"/> -->
+							<!-- <shield macro="shield_par_m_standard_01_mk2_macro" path="../con_shield_front_r"/><shield macro="shield_par_m_standard_01_mk2_macro" path="../con_shield_front_l"/>-->
 							<turret macro="turret_par_m_beam_01_mk1_macro" path="../con_turret_l01"/>
 							<turret macro="turret_par_m_beam_01_mk1_macro" path="../con_turret_r01"/>
-							</macros>
+						</macros>
 						<software>
 							<software ware="software_dockmk2"/>
 							<software ware="software_flightassistmk1"/>
@@ -49,17 +52,17 @@
 							<thruster macro="thruster_gen_m_combat_01_mk3_macro"/>
 						</virtualmacros>
 						<ammunition>
-							<ammunition macro="missile_dumbfire_heavy_mk2_macro" exact="8"/>
+							<ammunition exact="8" macro="missile_dumbfire_heavy_mk2_macro"/>
 						</ammunition>
 					</loadout>
 				</ship>
 				<inventory>
-					<ware ware="inv_timewarp" amount="1" />
-					<ware ware="inv_interfaceunit" amount="6" />
-			        <ware ware="weapon_gen_spacesuit_repairlaser_01_mk1" amount="1" />
-			        <ware ware="weapon_gen_spacesuit_demolition_01_mk1"/>
-			        <ware ware="weapon_gen_spacesuit_laser_01_mk1"/>
-					<ware ware="software_scannerobjectmk3" amount="1" />
+					<ware amount="1" ware="inv_timewarp"/>
+					<ware amount="6" ware="inv_interfaceunit"/>
+					<ware amount="1" ware="weapon_gen_spacesuit_repairlaser_01_mk1"/>
+					<ware ware="weapon_gen_spacesuit_demolition_01_mk1"/>
+					<ware ware="weapon_gen_spacesuit_laser_01_mk1"/>
+					<ware amount="1" ware="software_scannerobjectmk3"/>
 				</inventory>
 				<blueprints>
 					<ware ware="paintmod_0006"/>
@@ -82,257 +85,257 @@
 					<ware ware="module_par_stor_solid_m_01"/>
 					<ware ware="module_par_stor_liquid_m_01"/>
 					<!-- Docks -->
-		          <ware ware="module_arg_dock_m_01"/>
-		          <ware ware="module_arg_dock_m_01_hightech"/>
-		          <ware ware="module_arg_dock_m_01_lowtech"/>
-		          <ware ware="module_arg_dock_m_02"/>
-		          <ware ware="module_arg_dock_m_02_hightech"/>
-		          <ware ware="module_arg_dock_m_02_lowtech"/>
+					<ware ware="module_arg_dock_m_01"/>
+					<ware ware="module_arg_dock_m_01_hightech"/>
+					<ware ware="module_arg_dock_m_01_lowtech"/>
+					<ware ware="module_arg_dock_m_02"/>
+					<ware ware="module_arg_dock_m_02_hightech"/>
+					<ware ware="module_arg_dock_m_02_lowtech"/>
 					<!-- General Modules -->
-		          <ware ware="module_gen_prod_energycells_01"/>
-		          <ware ware="module_gen_prod_advancedcomposites_01"/>
-		          <ware ware="module_gen_prod_advancedelectronics_01"/>
-		          <ware ware="module_gen_prod_antimattercells_01"/>
-		          <ware ware="module_gen_prod_antimatterconverters_01"/>
-		          <ware ware="module_gen_prod_claytronics_01"/>
-		          <ware ware="module_gen_prod_dronecomponents_01"/>
-		          <ware ware="module_gen_prod_engineparts_01"/>
-		          <ware ware="module_gen_prod_fieldcoils_01"/>
-		          <ware ware="module_gen_prod_graphene_01"/>
-		          <ware ware="module_gen_prod_hullparts_01"/>
-		          <ware ware="module_gen_prod_microchips_01"/>
-		          <ware ware="module_gen_prod_missilecomponents_01"/>
-		          <ware ware="module_gen_prod_plasmaconductors_01"/>
-		          <ware ware="module_gen_prod_quantumtubes_01"/>
-		          <ware ware="module_gen_prod_refinedmetals_01"/>
-		          <ware ware="module_gen_prod_scanningarrays_01"/>
-		          <ware ware="module_gen_prod_shieldcomponents_01"/>
-		          <ware ware="module_gen_prod_siliconwafers_01"/>
-		          <ware ware="module_gen_prod_smartchips_01"/>
-		          <ware ware="module_gen_prod_spices_01"/>
-		          <ware ware="module_gen_prod_superfluidcoolant_01"/>
-		          <ware ware="module_gen_prod_turretcomponents_01"/>
-		          <ware ware="module_gen_prod_water_01"/>
-		          <ware ware="module_gen_prod_weaponcomponents_01"/>
-							<!-- Paranid Modules -->
-		          <ware ware="module_par_pier_l_01"/>
-		          <ware ware="module_par_stor_container_s_01"/>
-		          <ware ware="module_par_conn_base_01"/>
-		          <ware ware="module_par_conn_cross_01"/>
-		          <ware ware="module_par_conn_vertical_01"/>
-		          <ware ware="module_par_prod_sojabeans_01"/>
-		          <ware ware="module_par_conn_base_02"/>
-		          <ware ware="module_par_conn_base_03"/>
-		          <ware ware="module_par_conn_cross_02"/>
-		          <ware ware="module_par_conn_cross_03"/>
-		          <ware ware="module_par_conn_vertical_02"/>
-		          <ware ware="module_par_def_claim_01"/>
-		          <ware ware="module_par_def_disc_01"/>n
-		          <ware ware="module_par_def_tube_01"/>
-		          <ware ware="module_par_hab_l_01"/>
-		          <ware ware="module_par_hab_m_01"/>
-		          <ware ware="module_par_hab_s_01"/>
-		          <ware ware="module_par_pier_l_02"/>
-		          <ware ware="module_par_pier_l_03"/>
-		          <ware ware="module_par_prod_majadust_01"/>
-		          <ware ware="module_par_prod_majasnails_01"/>
-		          <ware ware="module_par_prod_medicalsupplies_01"/>
-		          <ware ware="module_par_prod_sojahusk_01"/>
-		          <ware ware="module_par_stor_container_l_01"/>
-		          <ware ware="module_par_stor_container_m_01"/>
-		          <ware ware="module_par_stor_liquid_l_01"/>
-		          <ware ware="module_par_stor_liquid_s_01"/>
-		          <ware ware="module_par_stor_liquid_m_01"/>
-		          <ware ware="module_par_stor_solid_l_01"/>
-		          <ware ware="module_par_stor_solid_s_01"/>
-		          <ware ware="module_par_stor_solid_m_01"/>
-		          <!-- Paranid Turrets -->
-		          <ware ware="turret_par_l_beam_01_mk1"/>
-		          <ware ware="turret_par_l_dumbfire_01_mk1"/>
-		          <ware ware="turret_par_l_guided_01_mk1"/>
-		          <ware ware="turret_par_l_laser_01_mk1"/>
-		          <ware ware="turret_par_l_mining_01_mk1"/>
-		          <ware ware="turret_par_l_plasma_01_mk1"/>
-		          <ware ware="turret_par_m_beam_01_mk1"/>
-		          <ware ware="turret_par_m_beam_02_mk1"/>
-		          <ware ware="turret_par_m_dumbfire_01_mk1"/>
-		          <ware ware="turret_par_m_dumbfire_02_mk1"/>
-		          <ware ware="turret_par_m_gatling_01_mk1"/>
-		          <ware ware="turret_par_m_gatling_02_mk1"/>
-		          <ware ware="turret_par_m_guided_01_mk1"/>
-		          <ware ware="turret_par_m_guided_02_mk1"/>
-		          <ware ware="turret_par_m_laser_01_mk1"/>
-		          <ware ware="turret_par_m_laser_02_mk1"/>
-		          <ware ware="turret_par_m_mining_01_mk1"/>
-		          <ware ware="turret_par_m_mining_02_mk1"/>
-		          <ware ware="turret_par_m_plasma_01_mk1"/>
-		          <ware ware="turret_par_m_plasma_02_mk1"/>
-		          <ware ware="turret_par_m_shotgun_01_mk1"/>
-		          <ware ware="turret_par_m_shotgun_02_mk1"/>
-		          <!-- Paranid Shields -->
-		          <ware ware="shield_par_l_standard_01_mk1"/>
-		          <ware ware="shield_par_l_standard_01_mk2"/>
-		          <ware ware="shield_par_m_standard_01_mk1"/>
-		          <ware ware="shield_par_m_standard_01_mk2"/>
-		          <ware ware="shield_par_m_standard_02_mk1"/>
-		          <ware ware="shield_par_m_standard_02_mk2"/>
-		          <ware ware="shield_par_s_standard_01_mk1"/>
-		          <ware ware="shield_par_s_standard_01_mk2"/>
-		          <ware ware="shield_par_s_standard_01_mk3"/>
-		          <ware ware="shield_par_xl_standard_01_mk1"/>
-				  <!-- Modification -->
-		          <ware ware="mod_engine_boostduration_01_mk1"/>
-		          <ware ware="mod_engine_boostshielddrain_01_mk1"/>
-		          <ware ware="mod_engine_boostthrust_01_mk1"/>
-		          <ware ware="mod_engine_boostthrust_01_mk2"/>
-		          <ware ware="mod_engine_boostthrust_01_mk3"/>
-		          <ware ware="mod_engine_boostthrust_02_mk1"/>
-		          <ware ware="mod_engine_boostthrust_02_mk2"/>
-		          <ware ware="mod_engine_forwardthrust_01_mk1"/>
-		          <ware ware="mod_engine_forwardthrust_01_mk2"/>
-		          <ware ware="mod_engine_forwardthrust_01_mk3"/>
-		          <ware ware="mod_engine_forwardthrust_02_mk1"/>
-		          <ware ware="mod_engine_forwardthrust_02_mk2"/>
-		          <ware ware="mod_engine_rotationthrust_01_mk1"/>
-		          <ware ware="mod_engine_rotationthrust_01_mk3"/>
-		          <ware ware="mod_engine_rotationthrust_02_mk1"/>
-		          <ware ware="mod_engine_strafethrust_01_mk1"/>
-		          <ware ware="mod_engine_strafethrust_02_mk1"/>
-		          <ware ware="mod_engine_travelattacktime_01_mk1"/>
-		          <ware ware="mod_engine_travelchargetime_01_mk1"/>
-		          <ware ware="mod_engine_travelreleasetime_01_mk1"/>
-		          <ware ware="mod_engine_travelstartthrust_01_mk1"/>
-		          <ware ware="mod_engine_travelthrust_01_mk1"/>
-		          <ware ware="mod_engine_travelthrust_01_mk2"/>
-		          <ware ware="mod_engine_travelthrust_01_mk3"/>
-		          <ware ware="mod_engine_travelthrust_02_mk1"/>
-		          <ware ware="mod_engine_travelthrust_02_mk2"/>
-		          <ware ware="mod_shield_capacity_01_mk1"/>
-		          <ware ware="mod_shield_capacity_01_mk2"/>
-		          <ware ware="mod_shield_capacity_01_mk3"/>
-		          <ware ware="mod_shield_capacity_02_mk3"/>
-		          <ware ware="mod_shield_rechargedelay_01_mk1"/>
-		          <ware ware="mod_shield_rechargerate_01_mk1"/>
-		          <ware ware="mod_shield_rechargerate_01_mk2"/>
-		          <ware ware="mod_shield_rechargerate_01_mk3"/>
-		          <ware ware="mod_ship_countermeasurecapacity_01_mk1"/>
-		          <ware ware="mod_ship_deployablecapacity_01_mk1"/>
-		          <ware ware="mod_ship_drag_01_mk1"/>
-		          <ware ware="mod_ship_drag_01_mk2"/>
-		          <ware ware="mod_ship_mass_01_mk1"/>
-		          <ware ware="mod_ship_mass_01_mk2"/>
-		          <ware ware="mod_ship_mass_01_mk3"/>
-		          <ware ware="mod_ship_maxhull_01_mk1"/>
-		          <ware ware="mod_ship_missilecapacity_01_mk1"/>
-		          <ware ware="mod_ship_radarrange_01_mk1"/>
-		          <ware ware="mod_ship_unitcapacity_01_mk1"/>
-		          <ware ware="mod_weapon_beamlength_01_mk1"/>
-		          <ware ware="mod_weapon_chargetime_01_mk1"/>
-		          <ware ware="mod_weapon_cooling_01_mk1"/>
-		          <ware ware="mod_weapon_cooling_01_mk2"/>
-		          <ware ware="mod_weapon_cooling_02_mk1"/>
-		          <ware ware="mod_weapon_cooling_02_mk2"/>
-		          <ware ware="mod_weapon_cooling_03_mk1"/>
-		          <ware ware="mod_weapon_cooling_03_mk2"/>
-		          <ware ware="mod_weapon_cooling_04_mk2"/>
-		          <ware ware="mod_weapon_cooling_05_mk2"/>
-		          <ware ware="mod_weapon_damage_01_mk1"/>
-		          <ware ware="mod_weapon_damage_01_mk2"/>
-		          <ware ware="mod_weapon_damage_01_mk3"/>
-		          <ware ware="mod_weapon_damage_02_mk1"/>
-		          <ware ware="mod_weapon_damage_02_mk2"/>
-		          <ware ware="mod_weapon_damage_02_mk3"/>
-		          <ware ware="mod_weapon_damage_03_mk1"/>
-		          <ware ware="mod_weapon_damage_03_mk2"/>
-		          <ware ware="mod_weapon_damage_04_mk2"/>
-		          <ware ware="mod_weapon_damage_05_mk2"/>
-		          <ware ware="mod_weapon_lifetime_01_mk1"/>
-		          <ware ware="mod_weapon_mining_01_mk1"/>
-		          <ware ware="mod_weapon_mining_01_mk3"/>
-		          <ware ware="mod_weapon_reload_01_mk1"/>
-		          <ware ware="mod_weapon_rotationspeed_01_mk1"/>
-		          <ware ware="mod_weapon_speed_01_mk1"/>
-		          <ware ware="mod_weapon_speed_01_mk3"/>
-		          <ware ware="mod_weapon_sticktime_01_mk1"/>
-		          <ware ware="mod_weapon_sticktime_01_mk2"/>
-		          <ware ware="mod_weapon_sticktime_02_mk2"/>
-		          <ware ware="mod_weapon_sticktime_03_mk2"/>
-				                    <!-- Missiles -->
-		          <ware ware="missile_cluster_heavy_mk1"/>
-		          <ware ware="missile_cluster_light_mk1"/>
-		          <ware ware="missile_dumbfire_heavy_mk1"/>
-		          <ware ware="missile_dumbfire_heavy_mk2"/>
-		          <ware ware="missile_dumbfire_light_mk1"/>
-		          <ware ware="missile_dumbfire_light_mk2"/>
-		          <ware ware="missile_emp_mk1"/>
-		          <ware ware="missile_guided_heavy_mk1"/>
-		          <ware ware="missile_guided_light_mk1"/>
-		          <ware ware="missile_heatseeker_heavy_mk1"/>
-		          <ware ware="missile_heatseeker_light_mk1"/>
-		          <ware ware="missile_smart_heavy_mk1"/>
-		          <ware ware="missile_smart_light_mk1"/>
-		          <ware ware="missile_swarm_heavy_mk1"/>
-		          <ware ware="missile_swarm_light_mk1"/>
-		          <ware ware="missile_torpedo_heavy_mk1"/>
-		          <ware ware="missile_torpedo_light_mk1"/>
-				</blueprints>
-		        <research>
-		          <ware ware="research_radioreceiver"/>
-		          <ware ware="research_sensorbooster"/>
-		          <ware ware="research_tradeinterface"/>
-		          <ware ware="research_module_build"/>
-		          <ware ware="research_module_defence"/>
-		          <ware ware="research_module_dock"/>
-		          <ware ware="research_module_habitation"/>
-		          <ware ware="research_module_production"/>
-		          <ware ware="research_module_storage"/>
-		          <ware ware="research_module_venture"/>
-		          <ware ware="research_mod_engine_mk1"/>
-		          <ware ware="research_mod_engine_mk2"/>
-		          <ware ware="research_mod_engine_mk3"/>
-		          <ware ware="research_mod_shield_mk1"/>
-		          <ware ware="research_mod_shield_mk2"/>
-		          <ware ware="research_mod_shield_mk3"/>
-		          <ware ware="research_mod_ship_mk1"/>
-		          <ware ware="research_mod_ship_mk2"/>
-		          <ware ware="research_mod_ship_mk3"/>
-		          <ware ware="research_mod_weapon_mk1"/>
-		          <ware ware="research_mod_weapon_mk2"/>
-		          <ware ware="research_mod_weapon_mk3"/>
-		          <ware ware="research_teleportation"/>
-		          <ware ware="research_teleportation_range_01"/>
-		          <ware ware="research_teleportation_range_02"/>
-		          <!--  <ware ware="research_teleportation_range_03"/>  Removed for plot mission -->
-		        </research>
-		        <timeline>
-		          <entry ref="earth_jumpgates" />
-		          <entry ref="winterblossom" />
-		          <entry ref="terraformer_project_starts" />
-		          <entry ref="terraformer_project_ends" />
-		          <entry ref="terraformer_war" />
-		          <entry ref="first_contact_paranid" />
-		          <entry ref="foundation_federation" />
-		          <entry ref="first_contact_boron" />
-		          <entry ref="first_contact_split" />
-		          <entry ref="cold_war" />
-		          <entry ref="first_contact_teladi" />
-		          <entry ref="xenon_evolution" />
-		          <entry ref="kyle_brennan_arrival" />
-		          <entry ref="khaak_arrival" />
-		          <entry ref="presidents_end" />
-		          <entry ref="omicron_lyrae" />
-		          <entry ref="race_to_find_earth" />
-		          <entry ref="terran_khaak_assistance" />
-		          <entry ref="operation_final_fury" />
-		          <entry ref="agi_tension" />
-		          <entry ref="terran_conflict" />
-		          <entry ref="torus_aeternal" />
-		          <entry ref="warp_instability" />
-		          <entry ref="gate_shutdown" />
-		          <entry ref="alliance_of_the_word" />
-		          <entry ref="gate_reopening" />
-		          <entry ref="gate_stabilisation" />
-		        </timeline>
+					<ware ware="module_gen_prod_energycells_01"/>
+					<ware ware="module_gen_prod_advancedcomposites_01"/>
+					<ware ware="module_gen_prod_advancedelectronics_01"/>
+					<ware ware="module_gen_prod_antimattercells_01"/>
+					<ware ware="module_gen_prod_antimatterconverters_01"/>
+					<ware ware="module_gen_prod_claytronics_01"/>
+					<ware ware="module_gen_prod_dronecomponents_01"/>
+					<ware ware="module_gen_prod_engineparts_01"/>
+					<ware ware="module_gen_prod_fieldcoils_01"/>
+					<ware ware="module_gen_prod_graphene_01"/>
+					<ware ware="module_gen_prod_hullparts_01"/>
+					<ware ware="module_gen_prod_microchips_01"/>
+					<ware ware="module_gen_prod_missilecomponents_01"/>
+					<ware ware="module_gen_prod_plasmaconductors_01"/>
+					<ware ware="module_gen_prod_quantumtubes_01"/>
+					<ware ware="module_gen_prod_refinedmetals_01"/>
+					<ware ware="module_gen_prod_scanningarrays_01"/>
+					<ware ware="module_gen_prod_shieldcomponents_01"/>
+					<ware ware="module_gen_prod_siliconwafers_01"/>
+					<ware ware="module_gen_prod_smartchips_01"/>
+					<ware ware="module_gen_prod_spices_01"/>
+					<ware ware="module_gen_prod_superfluidcoolant_01"/>
+					<ware ware="module_gen_prod_turretcomponents_01"/>
+					<ware ware="module_gen_prod_water_01"/>
+					<ware ware="module_gen_prod_weaponcomponents_01"/>
+					<!-- Paranid Modules -->
+					<ware ware="module_par_pier_l_01"/>
+					<ware ware="module_par_stor_container_s_01"/>
+					<ware ware="module_par_conn_base_01"/>
+					<ware ware="module_par_conn_cross_01"/>
+					<ware ware="module_par_conn_vertical_01"/>
+					<ware ware="module_par_prod_sojabeans_01"/>
+					<ware ware="module_par_conn_base_02"/>
+					<ware ware="module_par_conn_base_03"/>
+					<ware ware="module_par_conn_cross_02"/>
+					<ware ware="module_par_conn_cross_03"/>
+					<ware ware="module_par_conn_vertical_02"/>
+					<ware ware="module_par_def_claim_01"/>
+					<ware ware="module_par_def_disc_01"/>n
+		          
+					<ware ware="module_par_def_tube_01"/>
+					<ware ware="module_par_hab_l_01"/>
+					<ware ware="module_par_hab_m_01"/>
+					<ware ware="module_par_hab_s_01"/>
+					<ware ware="module_par_pier_l_02"/>
+					<ware ware="module_par_pier_l_03"/>
+					<ware ware="module_par_prod_majadust_01"/>
+					<ware ware="module_par_prod_majasnails_01"/>
+					<ware ware="module_par_prod_medicalsupplies_01"/>
+					<ware ware="module_par_prod_sojahusk_01"/>
+					<ware ware="module_par_stor_container_l_01"/>
+					<ware ware="module_par_stor_container_m_01"/>
+					<ware ware="module_par_stor_liquid_l_01"/>
+					<ware ware="module_par_stor_liquid_s_01"/>
+					<ware ware="module_par_stor_liquid_m_01"/>
+					<ware ware="module_par_stor_solid_l_01"/>
+					<ware ware="module_par_stor_solid_s_01"/>
+					<ware ware="module_par_stor_solid_m_01"/>
+					<!-- Paranid Turrets -->
+					<ware ware="turret_par_l_beam_01_mk1"/>
+					<ware ware="turret_par_l_dumbfire_01_mk1"/>
+					<ware ware="turret_par_l_guided_01_mk1"/>
+					<ware ware="turret_par_l_laser_01_mk1"/>
+					<ware ware="turret_par_l_mining_01_mk1"/>
+					<ware ware="turret_par_l_plasma_01_mk1"/>
+					<ware ware="turret_par_m_beam_01_mk1"/>
+					<ware ware="turret_par_m_beam_02_mk1"/>
+					<ware ware="turret_par_m_dumbfire_01_mk1"/>
+					<ware ware="turret_par_m_dumbfire_02_mk1"/>
+					<ware ware="turret_par_m_gatling_01_mk1"/>
+					<ware ware="turret_par_m_gatling_02_mk1"/>
+					<ware ware="turret_par_m_guided_01_mk1"/>
+					<ware ware="turret_par_m_guided_02_mk1"/>
+					<ware ware="turret_par_m_laser_01_mk1"/>
+					<ware ware="turret_par_m_laser_02_mk1"/>
+					<ware ware="turret_par_m_mining_01_mk1"/>
+					<ware ware="turret_par_m_mining_02_mk1"/>
+					<ware ware="turret_par_m_plasma_01_mk1"/>
+					<ware ware="turret_par_m_plasma_02_mk1"/>
+					<ware ware="turret_par_m_shotgun_01_mk1"/>
+					<ware ware="turret_par_m_shotgun_02_mk1"/>
+					<!-- Paranid Shields -->
+					<ware ware="shield_par_l_standard_01_mk1"/>
+					<ware ware="shield_par_l_standard_01_mk2"/>
+					<ware ware="shield_par_m_standard_01_mk1"/>
+					<ware ware="shield_par_m_standard_01_mk2"/>
+					<ware ware="shield_par_m_standard_02_mk1"/>
+					<ware ware="shield_par_m_standard_02_mk2"/>
+					<ware ware="shield_par_s_standard_01_mk1"/>
+					<ware ware="shield_par_s_standard_01_mk2"/>
+					<ware ware="shield_par_s_standard_01_mk3"/>
+					<ware ware="shield_par_xl_standard_01_mk1"/>
+					<!-- Modification -->
+					<ware ware="mod_engine_boostduration_01_mk1"/>
+					<ware ware="mod_engine_boostshielddrain_01_mk1"/>
+					<ware ware="mod_engine_boostthrust_01_mk1"/>
+					<ware ware="mod_engine_boostthrust_01_mk2"/>
+					<ware ware="mod_engine_boostthrust_01_mk3"/>
+					<ware ware="mod_engine_boostthrust_02_mk1"/>
+					<ware ware="mod_engine_boostthrust_02_mk2"/>
+					<ware ware="mod_engine_forwardthrust_01_mk1"/>
+					<ware ware="mod_engine_forwardthrust_01_mk2"/>
+					<ware ware="mod_engine_forwardthrust_01_mk3"/>
+					<ware ware="mod_engine_forwardthrust_02_mk1"/>
+					<ware ware="mod_engine_forwardthrust_02_mk2"/>
+					<ware ware="mod_engine_rotationthrust_01_mk1"/>
+					<ware ware="mod_engine_rotationthrust_01_mk3"/>
+					<ware ware="mod_engine_rotationthrust_02_mk1"/>
+					<ware ware="mod_engine_strafethrust_01_mk1"/>
+					<ware ware="mod_engine_strafethrust_02_mk1"/>
+					<ware ware="mod_engine_travelattacktime_01_mk1"/>
+					<ware ware="mod_engine_travelchargetime_01_mk1"/>
+					<ware ware="mod_engine_travelreleasetime_01_mk1"/>
+					<ware ware="mod_engine_travelstartthrust_01_mk1"/>
+					<ware ware="mod_engine_travelthrust_01_mk1"/>
+					<ware ware="mod_engine_travelthrust_01_mk2"/>
+					<ware ware="mod_engine_travelthrust_01_mk3"/>
+					<ware ware="mod_engine_travelthrust_02_mk1"/>
+					<ware ware="mod_engine_travelthrust_02_mk2"/>
+					<ware ware="mod_shield_capacity_01_mk1"/>
+					<ware ware="mod_shield_capacity_01_mk2"/>
+					<ware ware="mod_shield_capacity_01_mk3"/>
+					<ware ware="mod_shield_capacity_02_mk3"/>
+					<ware ware="mod_shield_rechargedelay_01_mk1"/>
+					<ware ware="mod_shield_rechargerate_01_mk1"/>
+					<ware ware="mod_shield_rechargerate_01_mk2"/>
+					<ware ware="mod_shield_rechargerate_01_mk3"/>
+					<ware ware="mod_ship_countermeasurecapacity_01_mk1"/>
+					<ware ware="mod_ship_deployablecapacity_01_mk1"/>
+					<ware ware="mod_ship_drag_01_mk1"/>
+					<ware ware="mod_ship_drag_01_mk2"/>
+					<ware ware="mod_ship_mass_01_mk1"/>
+					<ware ware="mod_ship_mass_01_mk2"/>
+					<ware ware="mod_ship_mass_01_mk3"/>
+					<ware ware="mod_ship_maxhull_01_mk1"/>
+					<ware ware="mod_ship_missilecapacity_01_mk1"/>
+					<ware ware="mod_ship_radarrange_01_mk1"/>
+					<ware ware="mod_ship_unitcapacity_01_mk1"/>
+					<ware ware="mod_weapon_beamlength_01_mk1"/>
+					<ware ware="mod_weapon_chargetime_01_mk1"/>
+					<ware ware="mod_weapon_cooling_01_mk1"/>
+					<ware ware="mod_weapon_cooling_01_mk2"/>
+					<ware ware="mod_weapon_cooling_02_mk1"/>
+					<ware ware="mod_weapon_cooling_02_mk2"/>
+					<ware ware="mod_weapon_cooling_03_mk1"/>
+					<ware ware="mod_weapon_cooling_03_mk2"/>
+					<ware ware="mod_weapon_cooling_04_mk2"/>
+					<ware ware="mod_weapon_cooling_05_mk2"/>
+					<ware ware="mod_weapon_damage_01_mk1"/>
+					<ware ware="mod_weapon_damage_01_mk2"/>
+					<ware ware="mod_weapon_damage_01_mk3"/>
+					<ware ware="mod_weapon_damage_02_mk1"/>
+					<ware ware="mod_weapon_damage_02_mk2"/>
+					<ware ware="mod_weapon_damage_02_mk3"/>
+					<ware ware="mod_weapon_damage_03_mk1"/>
+					<ware ware="mod_weapon_damage_03_mk2"/>
+					<ware ware="mod_weapon_damage_04_mk2"/>
+					<ware ware="mod_weapon_damage_05_mk2"/>
+					<ware ware="mod_weapon_lifetime_01_mk1"/>
+					<ware ware="mod_weapon_mining_01_mk1"/>
+					<ware ware="mod_weapon_mining_01_mk3"/>
+					<ware ware="mod_weapon_reload_01_mk1"/>
+					<ware ware="mod_weapon_rotationspeed_01_mk1"/>
+					<ware ware="mod_weapon_speed_01_mk1"/>
+					<ware ware="mod_weapon_speed_01_mk3"/>
+					<ware ware="mod_weapon_sticktime_01_mk1"/>
+					<ware ware="mod_weapon_sticktime_01_mk2"/>
+					<ware ware="mod_weapon_sticktime_02_mk2"/>
+					<ware ware="mod_weapon_sticktime_03_mk2"/>
+					<!-- Missiles -->
+					<ware ware="missile_cluster_heavy_mk1"/>
+					<ware ware="missile_cluster_light_mk1"/>
+					<ware ware="missile_dumbfire_heavy_mk1"/>
+					<ware ware="missile_dumbfire_heavy_mk2"/>
+					<ware ware="missile_dumbfire_light_mk1"/>
+					<ware ware="missile_dumbfire_light_mk2"/>
+					<ware ware="missile_emp_mk1"/>
+					<ware ware="missile_guided_heavy_mk1"/>
+					<ware ware="missile_guided_light_mk1"/>
+					<ware ware="missile_heatseeker_heavy_mk1"/>
+					<ware ware="missile_heatseeker_light_mk1"/>
+					<ware ware="missile_smart_heavy_mk1"/>
+					<ware ware="missile_smart_light_mk1"/>
+					<ware ware="missile_swarm_heavy_mk1"/>
+					<ware ware="missile_swarm_light_mk1"/>
+					<ware ware="missile_torpedo_heavy_mk1"/>
+					<ware ware="missile_torpedo_light_mk1"/></blueprints>
+				<research>
+					<ware ware="research_radioreceiver"/>
+					<ware ware="research_sensorbooster"/>
+					<ware ware="research_tradeinterface"/>
+					<ware ware="research_module_build"/>
+					<ware ware="research_module_defence"/>
+					<ware ware="research_module_dock"/>
+					<ware ware="research_module_habitation"/>
+					<ware ware="research_module_production"/>
+					<ware ware="research_module_storage"/>
+					<ware ware="research_module_venture"/>
+					<ware ware="research_mod_engine_mk1"/>
+					<ware ware="research_mod_engine_mk2"/>
+					<ware ware="research_mod_engine_mk3"/>
+					<ware ware="research_mod_shield_mk1"/>
+					<ware ware="research_mod_shield_mk2"/>
+					<ware ware="research_mod_shield_mk3"/>
+					<ware ware="research_mod_ship_mk1"/>
+					<ware ware="research_mod_ship_mk2"/>
+					<ware ware="research_mod_ship_mk3"/>
+					<ware ware="research_mod_weapon_mk1"/>
+					<ware ware="research_mod_weapon_mk2"/>
+					<ware ware="research_mod_weapon_mk3"/>
+					<ware ware="research_teleportation"/>
+					<ware ware="research_teleportation_range_01"/>
+					<ware ware="research_teleportation_range_02"/>
+					<!--  <ware ware="research_teleportation_range_03"/>Removed for plot mission -->
+				</research>
+				<timeline>
+					<entry ref="earth_jumpgates"/>
+					<entry ref="winterblossom"/>
+					<entry ref="terraformer_project_starts"/>
+					<entry ref="terraformer_project_ends"/>
+					<entry ref="terraformer_war"/>
+					<entry ref="first_contact_paranid"/>
+					<entry ref="foundation_federation"/>
+					<entry ref="first_contact_boron"/>
+					<entry ref="first_contact_split"/>
+					<entry ref="cold_war"/>
+					<entry ref="first_contact_teladi"/>
+					<entry ref="xenon_evolution"/>
+					<entry ref="kyle_brennan_arrival"/>
+					<entry ref="khaak_arrival"/>
+					<entry ref="presidents_end"/>
+					<entry ref="omicron_lyrae"/>
+					<entry ref="race_to_find_earth"/>
+					<entry ref="terran_khaak_assistance"/>
+					<entry ref="operation_final_fury"/>
+					<entry ref="agi_tension"/>
+					<entry ref="terran_conflict"/>
+					<entry ref="torus_aeternal"/>
+					<entry ref="warp_instability"/>
+					<entry ref="gate_shutdown"/>
+					<entry ref="alliance_of_the_word"/>
+					<entry ref="gate_reopening"/>
+					<entry ref="gate_stabilisation"/>
+				</timeline>
 			</player>
 		</gamestart>
 	</add>

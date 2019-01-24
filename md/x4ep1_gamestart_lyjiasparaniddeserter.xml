@@ -1,80 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
 <mdscript name="x4ep1_gamestart_lyjias_paranid_deserter" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="md.xsd">
-	<cues>
-		<cue name="LyjiasParanidDeserterStart" module="x4ep1_gamestart_lyjias_paranid_deserter">
-      <conditions>
-        <event_cue_signalled cue="md.Setup.GameStart" />
-      </conditions>
-      <actions>
-        <set_faction_known faction="faction.argon" known="true"/>
-        <set_faction_known faction="faction.teladi" known="true"/>
-        <set_faction_known faction="faction.antigone" known="true"/>
-        <set_faction_known faction="faction.ministry" known="true"/>
-        <set_faction_known faction="faction.alliance" known="true" />
-        <set_faction_known faction="faction.hatikvah" known="true" />
-        <set_faction_known faction="faction.holyorder" known="true" />
-        <set_faction_known faction="faction.scaleplate" known="true" />
-        <set_faction_known faction="faction.xenon" known="true" />
-        <set_faction_known faction="faction.khaak" known="true" />
+    <cues>
+        <cue module="x4ep1_gamestart_lyjias_paranid_deserter" name="LPD_StartSetFactionRelations">
+            <conditions>
+                <event_cue_signalled cue="md.Setup.GameStart"/>
+            </conditions>
+            <actions>
+                <set_faction_known faction="faction.argon" known="true"/>
+                <set_faction_known faction="faction.teladi" known="true"/>
+                <set_faction_known faction="faction.antigone" known="true"/>
+                <set_faction_known faction="faction.ministry" known="true"/>
+                <set_faction_known faction="faction.alliance" known="true"/>
+                <set_faction_known faction="faction.hatikvah" known="true"/>
+                <set_faction_known faction="faction.holyorder" known="true"/>
+                <set_faction_known faction="faction.scaleplate" known="true"/>
+                <set_faction_known faction="faction.xenon" known="true"/>
+                <set_faction_known faction="faction.khaak" known="true"/>
+                <set_faction_relation faction="faction.player" otherfaction="faction.holyorder" value="-1.0"/>
+                <set_faction_relation faction="faction.holyorder" otherfaction="faction.player" value="-1.0"/>
+                <set_faction_relation faction="faction.player" otherfaction="faction.paranid" value="-0.75"/>
+                <set_faction_relation faction="faction.paranid" otherfaction="faction.player" value="-0.75"/>
+                <set_faction_relation faction="faction.player" otherfaction="faction.alliance" value="-0.01"/>
+                <set_faction_relation faction="faction.alliance" otherfaction="faction.player" value="-0.01"/>
+                <!-- Paranid civil war -->
+                <set_faction_relation faction="faction.holyorder" otherfaction="faction.paranid" value="-0.5"/>
+                <set_faction_relation faction="faction.paranid" otherfaction="faction.holyorder" value="-0.5"/>
+                <install_software object="player.ship" software="ware.software_dockmk2"/>
+                <!-- Add NPCs to Player Ship -->
+                <find_ship multiple="false" name="$PlayerShip" owner="faction.player" space="player.zone"/>
+                <do_all counter="$j" exact="1">
+                    <create_control_entity name="$NewCrew" object="$PlayerShip" post="controlpost.engineer">
+                        <select race="[race.paranid]" tags="tag.marine"/>
+                        <owner exact="faction.player"/>
+                    </create_control_entity>
+                    <set_skill entity="$NewPilot" exact="10" type="skilltype.piloting"/>
+                    <set_skill entity="$NewPilot" exact="5" type="skilltype.engineering"/>
+                </do_all>
+            </actions>
+        </cue>
+        <cue module="x4ep1_gamestart_lyjias_paranid_deserter" name="LPD_StartSpawnPursuers">
+            <conditions>
+                <event_cue_signalled cue="md.Setup.GameStart"/>
+            </conditions>
+            <actions>
+                <!-- Create some pursuers -->
+                <generate_loadout faction="faction.argon" level="1" macro="macro.ship_par_s_fighter_01_a_macro" result="$loadout" wares="[ware.software_flightassistmk1, ware.software_dockmk2, ware.software_scannerlongrangemk2, ware.software_scannerobjectmk2, ware.software_targetmk1, ware.software_trademk1, ware.engine_arg_s_travel_01_mk3, ware.weapon_gen_s_gatling_01_mk2, ware.shield_arg_s_standard_01_mk3, ware.thruster_gen_s_allround_01_mk3]"/>
+                <do_all counter="$i" exact="5">
+                    <create_ship macro="ship_par_s_fighter_01_a_macro" name="$NewShip" zone="player.zone">
+                        <owner exact="faction.paranid" overridenpc="true"/>
+                        <loadout loadout="$loadout.{1}"/>
+                        <pilot>
+                            <select faction="faction.paranid" tags="tag.aipilot"/>
+                        </pilot>
+                        <people>
+                            <fillpercent exact="100"/>
+                            <person role="service" weight="50">
+                                <select faction="faction.paranid" tags="tag.crew"/>
+                            </person>
+                            <person role="marine" weight="50">
+                                <select faction="faction.paranid" tags="tag.marine"/>
+                            </person>
+                        </people>
+                        <safepos max="20km" min="8km" object="player.ship" radius="8km"/>
+                    </create_ship>
+                    <set_skill entity="$NewShip.pilot" exact="10" type="skilltype.piloting"/>
+                    <set_skill entity="$NewShip.pilot" exact="5" type="skilltype.engineering"/>
+                </do_all>
+            </actions>
+        </cue>
 
-        <set_faction_relation faction="faction.player" otherfaction="faction.holyorder" value="-1.0"/>
-        <set_faction_relation faction="faction.holyorder" otherfaction="faction.player" value="-1.0"/>
+        <cue module="x4ep1_gamestart_lyjias_paranid_deserter" name="LPD_StartSpawnSomeStuff">
+            <conditions>
+                <event_cue_signalled cue="md.Setup.GameStart"/>
+            </conditions>
+            <actions>
+                <debug_to_file name="'Boost'" directory="'Boost'" text="'******************************'" output="true" append="true" />
+                <debug_to_file name="'Boost'" directory="'Boost'" text="'Map Setup'" output="true" append="true" />
 
-        <set_faction_relation faction="faction.player" otherfaction="faction.paranid" value="-0.75"/>
-        <set_faction_relation faction="faction.paranid" otherfaction="faction.player" value="-0.75"/>
+                <!-- TODO: Create some ships raising hell in Holy Order space -->
+                <!-- TODO: Create some stations to help Paranid/HOP war efforts -->
+                <find_cluster name="$Clusters" multiple="true" />
+                <do_all exact="$Clusters.count" counter="$i">
+                    <set_value name="$Cluster" exact="$Clusters.{$i}" />
+                    <find_sector name="$Sectors" space="$Cluster" multiple="true" >
+                        <match_any>
+                            <match owner="faction.holyorder" />
+                            <match owner="faction.paranid" />
+                        </match_any>
+                    </find_sector>
+                    <do_all exact="$Sectors.count" counter="$j">
+                        <set_value name="$Sector" exact="$Sectors.{$j}" />
+                        <set_known object="$Sector" known="true" /> <!-- TODO: *REMOVE* this is only for debugging -->
+                        <find_station name="$Station" space="$Sector" multiple="false" >
+                            <match_any>
+                                <!-- wharf, shipyard -->
+                                <match_dock building="true"/>
+                            </match_any>
+                        </find_station>
+                        <create_station race="$Station.race" owner="$Station.owner" zone="$Station.zone" macro="x4ep1_gamestart_trade_playerfactory" constructionplan="x4ep1_gamestart_trade_playerfactory" name="$HelperStation">
+                              <safepos max="50km" min="30km" object="$Station" radius="30km"/>
+                        </create_station>
+                    </do_all>
+                </do_all>
+            </actions>
+        </cue>
 
-        <set_faction_relation faction="faction.player" otherfaction="faction.alliance" value="-0.01"/>
-        <set_faction_relation faction="faction.alliance" otherfaction="faction.player" value="-0.01"/>
-
-        <!-- Paranid civil war -->
-        <set_faction_relation faction="faction.holyorder" otherfaction="faction.paranid" value="-0.5"/>
-        <set_faction_relation faction="faction.paranid" otherfaction="faction.holyorder" value="-0.5"/>
-
-        <install_software object="player.ship" software="ware.software_dockmk2" />
-
-        <!-- Add NPCs to Player Ship -->
-        <find_ship name="$PlayerShip" owner="faction.player" space="player.zone" multiple="false" />
-        <do_all exact="1" counter="$j">
-            <create_control_entity name="$NewCrew" object="$PlayerShip" post="controlpost.engineer">
-                <select race="[race.paranid]" tags="tag.marine"/>
-                <owner exact="faction.player"/>
-            </create_control_entity>
-
-            <set_skill entity="$NewPilot" type="skilltype.piloting" exact="10" />
-            <set_skill entity="$NewPilot" type="skilltype.engineering" exact="5" />
-        </do_all>
-        
-        <!-- Create some pursuers -->
-        <generate_loadout macro="macro.ship_par_s_fighter_01_a_macro" faction="faction.argon"
-        wares="[ware.software_flightassistmk1, ware.software_dockmk2, ware.software_scannerlongrangemk2, ware.software_scannerobjectmk2, ware.software_targetmk1, ware.software_trademk1, ware.engine_arg_s_travel_01_mk3, ware.weapon_gen_s_gatling_01_mk2, ware.shield_arg_s_standard_01_mk3, ware.thruster_gen_s_allround_01_mk3]"
-        level="1" result="$loadout" />
-        <do_all exact="5" counter="$i">
-            <create_ship name="$NewShip" macro="ship_par_s_fighter_01_a_macro" zone="player.zone">
-                <owner exact="faction.paranid" overridenpc="true" />
-                <loadout loadout="$loadout.{1}" />
-                <pilot >
-                    <select faction="faction.paranid" tags="tag.aipilot"/>
-                </pilot>
-                <people>
-                    <fillpercent exact="100" />
-                    <person role="service" weight="50">
-                        <select faction="faction.paranid" tags="tag.crew"/>
-                    </person>
-                    <person role="marine" weight="50">
-                        <select faction="faction.paranid" tags="tag.marine"/>
-                    </person>
-                </people>
-                <safepos object="player.ship" radius="8km" min="8km" max="20km"/>
-            </create_ship>
-            <set_skill entity="$NewShip.pilot" type="skilltype.piloting" exact="10" />
-            <set_skill entity="$NewShip.pilot" type="skilltype.engineering" exact="5" />
-        </do_all>
-
-        <!-- TODO: Create some ships raising hell in Holy Order space -->
-
-        <!-- TODO: Create some stations to help Paranid/HOP war efforts -->
-
-      </actions>
-    </cue>
-	</cues>
+    </cues>
 </mdscript>
