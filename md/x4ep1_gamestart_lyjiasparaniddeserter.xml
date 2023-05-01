@@ -8,26 +8,24 @@
             <actions>
                 <set_faction_known faction="faction.argon" known="true"/>
                 <set_faction_known faction="faction.teladi" known="true"/>
-                <set_faction_known faction="faction.antigone" known="true"/>
                 <set_faction_known faction="faction.ministry" known="true"/>
-                <set_faction_known faction="faction.alliance" known="true"/>
                 <set_faction_known faction="faction.hatikvah" known="true"/>
                 <set_faction_known faction="faction.holyorder" known="true"/>
-                <set_faction_known faction="faction.scaleplate" known="true"/>
-                <set_faction_known faction="faction.xenon" known="true"/>
-                <set_faction_known faction="faction.khaak" known="true"/>
+                <set_faction_known faction="faction.paranid" known="true"/>
+
                 <set_faction_relation faction="faction.player" otherfaction="faction.holyorder" value="-1.0"/>
                 <set_faction_relation faction="faction.holyorder" otherfaction="faction.player" value="-1.0"/>
                 <set_faction_relation faction="faction.player" otherfaction="faction.paranid" value="-0.75"/>
                 <set_faction_relation faction="faction.paranid" otherfaction="faction.player" value="-0.75"/>
-                <set_faction_relation faction="faction.player" otherfaction="faction.alliance" value="-0.01"/>
-                <set_faction_relation faction="faction.alliance" otherfaction="faction.player" value="-0.01"/>
+                
                 <!-- Paranid civil war -->
                 <set_faction_relation faction="faction.holyorder" otherfaction="faction.paranid" value="-0.5"/>
                 <set_faction_relation faction="faction.paranid" otherfaction="faction.holyorder" value="-0.5"/>
                 <install_software object="player.ship" software="ware.software_dockmk2"/>
+                
                 <!-- Add NPCs to Player Ship -->
                 <find_ship multiple="false" name="$PlayerShip" owner="faction.player" space="player.zone"/>
+
                 <do_all counter="$j" exact="1">
                     <create_control_entity name="$NewCrew" object="$PlayerShip" post="controlpost.engineer">
                         <select race="[race.paranid]" tags="tag.marine"/>
@@ -36,15 +34,19 @@
                     <set_skill entity="$NewPilot" exact="10" type="skilltype.piloting"/>
                     <set_skill entity="$NewPilot" exact="5" type="skilltype.engineering"/>
                 </do_all>
+
             </actions>
         </cue>
+
         <cue module="x4ep1_gamestart_lyjias_paranid_deserter" name="LPD_StartSpawnPursuers">
+
             <conditions>
                 <event_cue_signalled cue="md.Setup.GameStart"/>
             </conditions>
+
             <actions>
                 <!-- Create some pursuers -->
-                <generate_loadout faction="faction.argon" level="1" macro="macro.ship_par_s_fighter_01_a_macro" result="$loadout" wares="[ware.software_flightassistmk1, ware.software_dockmk2, ware.software_scannerlongrangemk2, ware.software_scannerobjectmk2, ware.software_targetmk1, ware.software_trademk1, ware.engine_arg_s_travel_01_mk3, ware.weapon_gen_s_gatling_01_mk2, ware.shield_arg_s_standard_01_mk3, ware.thruster_gen_s_allround_01_mk3]"/>
+                <generate_loadout faction="faction.paranid" level="1" macro="macro.ship_par_s_fighter_01_a_macro" result="$loadout" wares="[ware.software_flightassistmk1, ware.software_dockmk2, ware.software_scannerlongrangemk2, ware.software_scannerobjectmk2, ware.software_targetmk1, ware.software_trademk1, ware.engine_arg_s_travel_01_mk3, ware.weapon_gen_s_gatling_01_mk2, ware.shield_arg_s_standard_01_mk3, ware.thruster_gen_s_allround_01_mk3]"/>
                 <do_all counter="$i" exact="5">
                     <create_ship macro="ship_par_s_fighter_01_a_macro" name="$NewShip" zone="player.zone">
                         <owner exact="faction.paranid" overridenpc="true"/>
@@ -74,8 +76,8 @@
                 <event_cue_signalled cue="md.Setup.GameStart"/>
             </conditions>
             <actions>
-                <debug_to_file name="'Boost'" directory="'Boost'" text="'******************************'" output="true" append="true" />
-                <debug_to_file name="'Boost'" directory="'Boost'" text="'Map Setup'" output="true" append="true" />
+<!--                 <debug_to_file name="'Boost'" directory="'Boost'" text="'******************************'" output="true" append="true" />
+                <debug_to_file name="'Boost'" directory="'Boost'" text="'Map Setup'" output="true" append="true" /> -->
 
                 <!-- TODO: Create some ships raising hell in Holy Order space -->
                 <!-- TODO: Create some stations to help Paranid/HOP war efforts -->

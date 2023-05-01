@@ -18,7 +18,7 @@
 				<!-- Version -->
 				<item name="{1001,2691}" value="20 Jan 2019"/>
 				<!-- Date -->
-				<item name="Relations" value="Paranid: Enemies. Holy Order: Enemies. Alliance: Enemies. Friends: None."/>
+				<item name="Relations" value="Paranid: Enemies. Holy Order: Enemies. Friends: None."/>
 				<item name="{1021,9950}" value="Howdy!"/>
 				<!-- Notes -->
 			</info>
@@ -292,20 +292,21 @@
 					<ware ware="research_module_venture"/>
 					<ware ware="research_mod_engine_mk1"/>
 					<ware ware="research_mod_engine_mk2"/>
-					<ware ware="research_mod_engine_mk3"/>
 					<ware ware="research_mod_shield_mk1"/>
 					<ware ware="research_mod_shield_mk2"/>
-					<ware ware="research_mod_shield_mk3"/>
 					<ware ware="research_mod_ship_mk1"/>
 					<ware ware="research_mod_ship_mk2"/>
 					<ware ware="research_mod_ship_mk3"/>
 					<ware ware="research_mod_weapon_mk1"/>
 					<ware ware="research_mod_weapon_mk2"/>
-					<ware ware="research_mod_weapon_mk3"/>
 					<ware ware="research_teleportation"/>
 					<ware ware="research_teleportation_range_01"/>
 					<ware ware="research_teleportation_range_02"/>
-					<!--  <ware ware="research_teleportation_range_03"/>Removed for plot mission -->
+					<ware ware="research_teleportation_range_03"/>
+					<!-- the following removed for plot mission -->
+					<!-- <ware ware="research_mod_weapon_mk3"/> -->
+					<!-- <ware ware="research_mod_shield_mk3"/> -->
+					<!-- <ware ware="research_mod_engine_mk3"/> -->
 				</research>
 				<timeline>
 					<entry ref="earth_jumpgates"/>
